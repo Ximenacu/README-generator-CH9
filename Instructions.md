@@ -67,3 +67,17 @@ https://coding-boot-camp.github.io/full-stack/computer-literacy/video-submission
 
 * Repo quality 
 
+## high-quality, professional README must have 's 
+A README file explains what your application does and why you used the technologies that you did.
+* Title and a short description explaining the what, why, and how of the project.
+
+* What was your motivation?
+* Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
+* What problem does it solve?
+* What did you learn?
+* What makes your project stand out?
+* Challenges and further development. 
+
+https://guides.github.com/features/mastering-markdown/
+
+
