@@ -3,7 +3,7 @@
 [How to create a Professional README](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)
 
 ## Notes 
-In order to install inquirer, please use:  npm i inquirer@8.2.4.
+In order to install inquirer, please use:  npm i inquirer@8.2.4.<br/>
 The application will be invoked by using the following command:
 node index.js
 
