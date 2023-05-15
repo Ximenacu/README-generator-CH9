@@ -6,7 +6,6 @@ const inquirer = require('inquirer');
 
 var mydata={}
 // TODO: Create an array of questions for user input
-const questions = [];
 const questionss = ["What is your Email?","What is your Github Username?",
 "What is the NAME of your project?","What LICENSE will you use?",
 "Write a DESCRIPTION of your project","How do you install your project?", 
@@ -83,72 +82,94 @@ inquirer
   }
   );
 
+
 // function to manage inputs
 function orderinput(data){
-  const title = ["# "+data.title];
+  const title = `# ${data.title} <br />`;
   fill.push(title);
-  const index = licenseopts.indexOf(data.license);
-  const badge = `${licenseBadge[index]} <br />`;
+
+  const badge = `${licenseBadge[licenseopts.indexOf(data.license)]} <br />`;
   fill.push(badge);
-  fill.push("## Description")
-  const descr = [data.descr];
+
+  fill.push("## Description <br />")
+  const descr = `${data.descr} <br />`;
   fill.push(descr);
-  fill.push("## Table of Contents")
-  fill.push("* [Installation Instructions](#installation-instructions)")
-  fill.push("* [Usage Information](#usage-information)")
-  fill.push("* [License](#license)")
-  fill.push("* [Contribution Guidelines](#contribution-guidelines)")
-  fill.push("* [Test Instructions](#tests-instructions)")
-  fill.push("* [Questions](#questions)")
-  // const table = ["<br/>## Table of Contents <br/>"];
-  // fill.push(table);
-  fill.push("## Installation Instructions")
-  const install = [data.install];
+
+  const table ="## Table of Contents <br /> * [Installation Instructions](#installation-instructions) <br /> * [Usage Information](#usage-information) <br /> * [License](#license) <br /> * [Contribution Guidelines](#contribution-guidelines) <br /> * [Test Instructions](#tests-instructions) <br /> * [Questions](#questions)<br /> ";
+  fill.push(table);
+
+  fill.push("## Installation Instructions <br />")
+  const install = `${data.install} <br />`;
   fill.push(install);
-  fill.push("## Usage Information")
-  const usage = [data.usage];
+
+  fill.push("## Usage Information <br />")
+  const usage = `${data.usage} <br />`;
   fill.push(usage);
-  fill.push("## License")
-  const license = [data.license];
+
+  fill.push("## License <br />")
+  const license = `${data.license} <br />`;
   fill.push(license);
-  fill.push("## Contribution Guidelines")
-  const contr = [data.contr];
+
+  fill.push("## Contribution Guidelines <br />")
+  const contr = `${data.contr} <br />`;
   fill.push(contr);
-  fill.push("## Tests Instructions")
-  const tests = [data.test];
+
+  fill.push("## Tests Instructions <br />")
+  const tests = `${data.test} <br />`;
   fill.push(tests);
-  fill.push("## Questions")
+
+  fill.push("## Questions <br />")
   const Qs = ["For any questions, please reach me at: "+data.email+"<br/> To see more of my work, see: "+data.github];
   fill.push(Qs);
 
   console.log("data",data);
   console.log("fill",fill);
-  // console.log("fill 0",fill[0])
-  // console.log("fill 0",typeof fill[0])
-  // var Ahh = fill[0].toString()
-  // console.log("ahh ",Ahh)
-  // console.log("ah type: ",typeof Ahh)
-
-  // console.log("fill",fill);
-  // for (n=0;n<fill.length;n++){
-  //   fill[n] = fill[n].toString;
-  // }
-  // console.log("fill after",fill);
-  // console.log("fill[3] after",fill[3]);
-
+  // problema de las comas y los titulos
   writeToFile(fill)
+  // problema de info desordenada. 
+  // writeToFile2(title, badge, descr, table, install, usage, license, contr, tests, Qs)
+
 }
 
 
-// TODO: Create a function to write README file
-function writeToFile(data) {
-  // for (n=0;n<fill.length;n++){
-    // console.log("data "+n+": "+data[n].toString());
-      fs.appendFile('README2.md', `${data.toString()} \n `, (err) =>
+// No jala
+function writeToFileFor(data) {
+  for (n=0;n<fill.length;n++){
+    console.log("data "+n+": "+data[n].toString());
+      fs.appendFile('README1.md', `${data[n].toString()} \n `, (err) =>
       err ? console.error(err) : console.log('Success!')
     );
-  // }
-    
+  } 
+}
+
+// TODO: Create a function to write README file
+function writeToFile(data) {
+      fs.appendFile('README1.md', `${data} \n `, (err) =>
+      err ? console.error(err) : console.log('Creating README!')
+    );    
+}
+
+
+// Another try 
+function writeToFile2(title, badge, descr, table, install, usage, license, contr, tests, Qs){
+  writeToFile(title)
+  writeToFile(badge)
+
+  writeToFile(`## Description <br /> ${descr}`)
+
+  writeToFile(table)
+
+  writeToFile(`## Installation Instructions <br /> ${install}`)
+
+  writeToFile(`## Usage Information <br /> ${usage}`)
+
+  writeToFile(`## License <br /> ${license}`)
+
+  writeToFile(`## Contribution Guidelines <br /> ${contr}`)
+  
+  writeToFile(`## Tests Instructions <br /> ${contr}`)
+
+  writeToFile(`## Questions <br /> ${Qs}`)
 }
 
 // TODO: Create a function to initialize app
@@ -156,3 +177,5 @@ function init() {}
 
 // Function call to initialize app
 init();
+
+//-------------------------------------------------------------------
