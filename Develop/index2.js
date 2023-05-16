@@ -26,7 +26,7 @@ const licenseBadge=["[![License](https://img.shields.io/badge/License-Apache_2.0
 const fill =[];
 
 function writeToFile(data) {
-    fs.appendFile('README8.md', `${data} \n `, (err) =>
+    fs.appendFile('READMEe.md', `${data} \n `, (err) =>
     err ? console.error(err) : console.log('')
   );    
 }
