@@ -13,6 +13,7 @@ It was developed with the intention of saving developers time by eliminating the
 
 
 ## Table of Contents 
+* [Important Links](#important-links)
 * [Installation Instructions](#installation-instructions)
 * [Usage Information](#usage-information)
 * [License](#license)
@@ -20,6 +21,9 @@ It was developed with the intention of saving developers time by eliminating the
 * [Test Instructions](#tests-instructions)
 * [Questions](#questions)
 
+## Important Links 
+* [Github Repository](https://github.com/Ximenacu/README-generator-CH9)
+* [Walthrough Video](https://drive.google.com/file/d/1oaNcWhsmxDjTxtLZZn90RnDzEZwvaM6U/view)
 
 ## Installation Instructions
 To use this application, you must have Node.js v16 installed. <br/>

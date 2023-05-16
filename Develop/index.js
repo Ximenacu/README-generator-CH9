@@ -112,7 +112,7 @@ function orderinput(data){
 
 // TODO: Create a function to write README file
 function writeToFile(data) {
-      fs.appendFile('README1.md', `${data} \n `, (err) =>
+      fs.appendFile('README.md', `${data} \n `, (err) =>
       err ? console.error(err) : console.log('Creating README!')
     );    
 }
